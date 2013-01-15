@@ -27,7 +27,7 @@ foreach my $word (@dictionary)
 {
 	chomp($word);
 	#regex find the data and populate the array holding the contents of one line of the csv file
-	if($word =~ /V\[([0-3][0-9])\]=(\d+)/) {print $1," ",$2,"\n";$battvolts[$1] = $2/10000;}
+	if($word =~ /V\[([0-3][0-9])\]=(\d+)/) {$battvolts[$1] = $2/10000;}
 	
 	#write the array to the output file whenever the program sees battery index 31
 	if($1 == 31)
